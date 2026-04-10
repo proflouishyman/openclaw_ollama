@@ -1,0 +1,239 @@
+{
+  "generated_at_utc": "2026-04-10T15:47:42.896231+00:00",
+  "sources": {
+    "bundled_baseline": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab-bundled.json",
+    "shadow_first_pass": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab-shadow.json",
+    "shadow_warm_rerun": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab-shadow-rerun.json"
+  },
+  "results": {
+    "bundled_baseline": {
+      "ok": 4,
+      "failed": 0,
+      "timeouts": 0,
+      "timeout_rate": 0.0,
+      "turns_with_usage": 4,
+      "turns": [
+        {
+          "turn": 1,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 46.91585775000567,
+          "usage": {
+            "input": 16851,
+            "output": 6,
+            "total": 16857,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 2,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 57.48341204099415,
+          "usage": {
+            "input": 16887,
+            "output": 6,
+            "total": 16893,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 3,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 58.22463645800599,
+          "usage": {
+            "input": 16923,
+            "output": 6,
+            "total": 16929,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 4,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 3.905346166007803,
+          "usage": {
+            "input": 16959,
+            "output": 6,
+            "total": 16965,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        }
+      ],
+      "token_metrics": {
+        "count": 4,
+        "sum": {
+          "input": 67620,
+          "output": 24,
+          "total": 67644,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "avg_per_ok_turn": {
+          "input": 16905.0,
+          "output": 6.0,
+          "total": 16911.0
+        },
+        "p50_total_per_ok_turn": 16911.0,
+        "p95_total_per_ok_turn": 16959.6,
+        "mean_tokens_per_second": 1321.9943115610251,
+        "p50_tokens_per_second": 326.58945185973005,
+        "p95_tokens_per_second": 3746.3337849588656
+      }
+    },
+    "shadow_first_pass": {
+      "ok": 1,
+      "failed": 3,
+      "timeouts": 3,
+      "timeout_rate": 0.75,
+      "turns_with_usage": 1,
+      "turns": [
+        {
+          "turn": 1,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 130.93279687500035,
+          "usage": {
+            "input": 17259,
+            "output": 6,
+            "total": 17265,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 2,
+          "ok": false,
+          "timeout": true,
+          "latency_s": 180.0082662920031,
+          "usage": null
+        },
+        {
+          "turn": 3,
+          "ok": false,
+          "timeout": true,
+          "latency_s": 180.0160397499858,
+          "usage": null
+        },
+        {
+          "turn": 4,
+          "ok": false,
+          "timeout": true,
+          "latency_s": 180.0098732500046,
+          "usage": null
+        }
+      ],
+      "token_metrics": {
+        "count": 1,
+        "sum": {
+          "input": 17259,
+          "output": 6,
+          "total": 17265,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "avg_per_ok_turn": {
+          "input": 17259.0,
+          "output": 6.0,
+          "total": 17265.0
+        },
+        "p50_total_per_ok_turn": 17265.0,
+        "p95_total_per_ok_turn": 17265.0,
+        "mean_tokens_per_second": 131.861538224702,
+        "p50_tokens_per_second": 131.861538224702,
+        "p95_tokens_per_second": 131.861538224702
+      }
+    },
+    "shadow_warm_rerun": {
+      "ok": 4,
+      "failed": 0,
+      "timeouts": 0,
+      "timeout_rate": 0.0,
+      "turns_with_usage": 4,
+      "turns": [
+        {
+          "turn": 1,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 4.029248375009047,
+          "usage": {
+            "input": 17190,
+            "output": 6,
+            "total": 17196,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 2,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 4.0066727090015775,
+          "usage": {
+            "input": 17226,
+            "output": 6,
+            "total": 17232,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 3,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 3.925906500007841,
+          "usage": {
+            "input": 17262,
+            "output": 8,
+            "total": 17270,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 4,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 3.9365104170137784,
+          "usage": {
+            "input": 17300,
+            "output": 6,
+            "total": 17306,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        }
+      ],
+      "token_metrics": {
+        "count": 4,
+        "sum": {
+          "input": 68978,
+          "output": 26,
+          "total": 69004,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "avg_per_ok_turn": {
+          "input": 17244.5,
+          "output": 6.5,
+          "total": 17251.0
+        },
+        "p50_total_per_ok_turn": 17251.0,
+        "p95_total_per_ok_turn": 17300.6,
+        "mean_tokens_per_second": 4340.97061833066,
+        "p50_tokens_per_second": 4348.552474325939,
+        "p95_tokens_per_second": 4398.578349367697
+      }
+    }
+  },
+  "notes": [
+    "Token values are parsed from OpenClaw benchmark stdout/stderr excerpts.",
+    "Timeout turns generally do not include usage payloads and are excluded from per-ok-turn aggregates."
+  ]
+}

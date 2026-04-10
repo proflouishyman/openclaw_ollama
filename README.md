@@ -120,6 +120,15 @@ Details and shareable artifacts:
 
 - `docs/METRICS_COMPARISON_2026-04-10.md`
 - `docs/metrics-comparison-2026-04-10.json`
+- `docs/TOKEN_USAGE_COMPARISON_2026-04-10.md`
+- `docs/token-usage-comparison-2026-04-10.json`
+
+Regenerate reports:
+
+```bash
+python3 scripts/build_metrics_comparison.py
+python3 scripts/build_token_usage_comparison.py
+```
 
 ## Upgrade notes
 
