@@ -93,28 +93,42 @@ Details: [docs/ROLLBACK.md](docs/ROLLBACK.md)
 node --test test/cache-controls.test.mjs
 ```
 
-## Measured results (2026-04-10)
+## Measured results (2026-04-10, 10-turn rerun)
 
-Test setup: fixed SOUL-heavy prompt, `ollama/gemma4:26b`, same agent/session,
-4 turns per scenario.
+Test setup:
 
-| Scenario | OK/Total | Timeout Rate | p50 (s) | p95 (s) |
+- prompt: `Reply with exactly OK`
+- model: `ollama/gemma4:26b`
+- 10 measured turns per scenario
+- warmup: `1` for bundled baseline and shadow first pass, `0` for shadow warm rerun
+
+Latency summary:
+
+| Scenario | OK/Total | Timeout Rate | Warmup p50 (s) | p50 (s) | p95 (s) |
+| --- | --- | --- | --- | --- | --- |
+| Bundled OpenClaw Ollama provider | 10/10 | 0% | 27.81 | 56.95 | 77.62 |
+| Shadow provider (first pass) | 10/10 | 0% | 118.71 | 3.92 | 4.03 |
+| Shadow provider (warm rerun) | 9/10 | 10% | n/a | 4.35 | 113.88 |
+
+Speedup vs bundled baseline:
+
+- Shadow first pass: `14.53x` faster on p50, `19.26x` faster on p95
+- Shadow warm rerun: `13.08x` faster on p50, but p95 regressed due long-tail outliers/timeouts
+
+Token usage summary (same 10-turn experiment):
+
+| Scenario | Usage Parsed | Avg Total Tokens/OK Turn | Mean Tokens/s | p50 Tokens/s |
 | --- | --- | --- | --- | --- |
-| Bundled OpenClaw Ollama provider | 4/4 | 0% | 52.20 | 58.11 |
-| Shadow provider (first pass) | 1/4 | 75% | 130.93 | 130.93 |
-| Shadow provider (warm rerun) | 4/4 | 0% | 3.97 | 4.03 |
+| Bundled OpenClaw Ollama provider | 10/10 | 17610.40 | 322.00 | 311.92 |
+| Shadow provider (first pass) | 10/10 | 18005.30 | 4569.18 | 4582.34 |
+| Shadow provider (warm rerun) | 8/10 | 18372.88 | 3419.82 | 4269.78 |
 
-Warm rerun speedup vs bundled baseline:
+Integrated interpretation:
 
-- p50: 13.14x faster
-- p95: 14.44x faster
-- timeout rate: 0% vs 0% (no regression)
-
-Interpretation:
-
-- Warm-path speedups can be large when static-prefix reuse is effective.
-- First-pass behavior may still be noisy depending on host load/model state.
-- Run multiple local passes before drawing conclusions.
+- Token volume per turn stays in the same range; caching does not meaningfully reduce reported prompt token counts.
+- The speedup comes from avoiding repeated prefix compute, so tokens/sec increases sharply in steady state.
+- This host shows a clear steady-state win (~14x p50), plus a meaningful cold-start cost (~119s warmup) and occasional long-tail failures.
+- Production rollout should treat this as a latency optimization with separate reliability guardrails (timeouts/retries/monitoring).
 
 Details and shareable artifacts:
 
@@ -122,22 +136,6 @@ Details and shareable artifacts:
 - `docs/metrics-comparison-2026-04-10.json`
 - `docs/TOKEN_USAGE_COMPARISON_2026-04-10.md`
 - `docs/token-usage-comparison-2026-04-10.json`
-
-## Token usage comparison (2026-04-10)
-
-From the same A/B benchmark runs:
-
-| Scenario | OK/Total | Input Sum | Output Sum | Total Sum | Avg Total/OK Turn | Mean Tokens/s |
-| --- | --- | --- | --- | --- | --- | --- |
-| Bundled OpenClaw Ollama provider | 4/4 | 67620 | 24 | 67644 | 16911.00 | 1321.99 |
-| Shadow provider (first pass) | 1/4 | 17259 | 6 | 17265 | 17265.00 | 131.86 |
-| Shadow provider (warm rerun) | 4/4 | 68978 | 26 | 69004 | 17251.00 | 4340.97 |
-
-Takeaways:
-
-- Token volume per successful turn is similar between bundled and shadow warm runs.
-- Latency gains are driven by execution speed, not fewer prompt tokens.
-- In these artifacts, `cacheRead/cacheWrite` remained `0`.
 
 Regenerate reports:
 
@@ -155,4 +153,3 @@ python3 scripts/generate_bundled_shim.py
 ```
 
 That refreshes the absolute bundled import target used by the plugin.
-# openclaw_ollama

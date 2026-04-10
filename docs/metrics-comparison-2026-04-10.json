@@ -1,151 +1,326 @@
 {
-  "generated_at_utc": "2026-04-10T15:33:37.842276+00:00",
+  "generated_at_utc": "2026-04-10T16:16:29.738848+00:00",
   "sources": {
-    "bundled_baseline": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab-bundled.json",
-    "shadow_first_pass": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab-shadow.json",
-    "shadow_warm_rerun": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab-shadow-rerun.json"
+    "bundled_baseline": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab10-bundled.json",
+    "shadow_first_pass": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab10-shadow.json",
+    "shadow_warm_rerun": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab10-shadow-rerun.json"
   },
   "results": {
     "bundled_baseline": {
-      "ok": 4,
+      "ok": 10,
       "failed": 0,
       "timeouts": 0,
       "timeout_rate": 0.0,
-      "p50": 52.19963489549991,
-      "p95": 58.113452795454215,
-      "mean": 41.632313103753404,
+      "p50": 56.94719579199591,
+      "p95": 77.6238013836999,
+      "mean": 57.413068966697026,
+      "warmup_p50": 27.81288433399459,
       "turns": [
         {
           "turn": 1,
           "ok": true,
-          "latency_s": 46.91585775000567,
+          "latency_s": 36.645394499995746,
           "timeout": false,
           "rc": 0,
           "stderr_excerpt": "",
-          "stdout_excerpt": "{\n  \"runId\": \"a4cbc65d-6d5b-49ab-b6d3-e17204e8628a\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 38347,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 16851,\n          \"output\": 6,\n          \"total\": 16857\n        },\n        \"lastCallUsage\": {\n          \"input\": 16851,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 16857\n        },\n        \"promptTokens\": 16851\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775833041250,\n        \"sessionId\": \"kv-ab-bundled\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          "
+          "stdout_excerpt": "{\n  \"runId\": \"50271f89-0008-4948-84ff-1ac663c5faf7\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 33676,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17444,\n          \"output\": 6,\n          \"total\": 17450\n        },\n        \"lastCallUsage\": {\n          \"input\": 17444,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17450\n        },\n        \"promptTokens\": 17444\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775836507789,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \""
         },
         {
           "turn": 2,
           "ok": true,
-          "latency_s": 57.48341204099415,
+          "latency_s": 42.50960608299647,
           "timeout": false,
           "rc": 0,
           "stderr_excerpt": "",
-          "stdout_excerpt": "{\n  \"runId\": \"5297bb7e-b420-4f8c-9e1b-1ed83ad0c9a0\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 53209,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 16887,\n          \"output\": 6,\n          \"total\": 16893\n        },\n        \"lastCallUsage\": {\n          \"input\": 16887,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 16893\n        },\n        \"promptTokens\": 16887\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775833081628,\n        \"sessionId\": \"kv-ab-bundled\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          "
+          "stdout_excerpt": "{\n  \"runId\": \"a17a6f60-4ba1-456e-b2ac-464002fe06e4\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 39082,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17480,\n          \"output\": 3,\n          \"total\": 17483\n        },\n        \"lastCallUsage\": {\n          \"input\": 17480,\n          \"output\": 3,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17483\n        },\n        \"promptTokens\": 17480\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775836544892,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \""
         },
         {
           "turn": 3,
           "ok": true,
-          "latency_s": 58.22463645800599,
+          "latency_s": 51.79145658299967,
           "timeout": false,
           "rc": 0,
           "stderr_excerpt": "",
-          "stdout_excerpt": "{\n  \"runId\": \"2062dbf4-e46e-463b-8f90-3dc9744607ad\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 54208,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 16923,\n          \"output\": 6,\n          \"total\": 16929\n        },\n        \"lastCallUsage\": {\n          \"input\": 16923,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 16929\n        },\n        \"promptTokens\": 16923\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775833138983,\n        \"sessionId\": \"kv-ab-bundled\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          "
+          "stdout_excerpt": "{\n  \"runId\": \"dfc941f7-8eca-4f21-8e09-3430341a76d9\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 48666,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17516,\n          \"output\": 2,\n          \"total\": 17518\n        },\n        \"lastCallUsage\": {\n          \"input\": 17516,\n          \"output\": 2,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17518\n        },\n        \"promptTokens\": 17516\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775836587171,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \""
         },
         {
           "turn": 4,
           "ok": true,
-          "latency_s": 3.905346166007803,
+          "latency_s": 84.97347108399845,
           "timeout": false,
           "rc": 0,
           "stderr_excerpt": "",
-          "stdout_excerpt": "{\n  \"runId\": \"9982bbfa-0254-43d4-bb8f-9127bda1367d\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1009,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 16959,\n          \"output\": 6,\n          \"total\": 16965\n        },\n        \"lastCallUsage\": {\n          \"input\": 16959,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 16965\n        },\n        \"promptTokens\": 16959\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775833195871,\n        \"sessionId\": \"kv-ab-bundled\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \""
+          "stdout_excerpt": "{\n  \"runId\": \"52c323dc-8360-4f89-ad92-5c9ba190c8f5\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 80746,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17552,\n          \"output\": 6,\n          \"total\": 17558\n        },\n        \"lastCallUsage\": {\n          \"input\": 17552,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17558\n        },\n        \"promptTokens\": 17552\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775836640109,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \""
+        },
+        {
+          "turn": 5,
+          "ok": true,
+          "latency_s": 62.29155179199006,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "",
+          "stdout_excerpt": "{\n  \"runId\": \"53f511ec-0769-4da6-8028-f7e8f0f92de9\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 58046,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17588,\n          \"output\": 3,\n          \"total\": 17591\n        },\n        \"lastCallUsage\": {\n          \"input\": 17588,\n          \"output\": 3,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17591\n        },\n        \"promptTokens\": 17588\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775836725108,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \""
+        },
+        {
+          "turn": 6,
+          "ok": true,
+          "latency_s": 68.64087175000168,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "",
+          "stdout_excerpt": "{\n  \"runId\": \"533c3dc5-e2c2-4e63-a208-c4faf021ba82\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 64526,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17624,\n          \"output\": 6,\n          \"total\": 17630\n        },\n        \"lastCallUsage\": {\n          \"input\": 17624,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17630\n        },\n        \"promptTokens\": 17624\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775836787240,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \""
+        },
+        {
+          "turn": 7,
+          "ok": true,
+          "latency_s": 54.635269541002344,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "",
+          "stdout_excerpt": "{\n  \"runId\": \"b0258810-5d94-4394-9bca-c112ac38b4b9\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 50445,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17660,\n          \"output\": 6,\n          \"total\": 17666\n        },\n        \"lastCallUsage\": {\n          \"input\": 17660,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17666\n        },\n        \"promptTokens\": 17660\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775836855974,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \""
+        },
+        {
+          "turn": 8,
+          "ok": true,
+          "latency_s": 58.74867674999405,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "",
+          "stdout_excerpt": "{\n  \"runId\": \"1c2a20b0-fa79-40a2-835c-e49b9bd926af\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 55150,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17696,\n          \"output\": 3,\n          \"total\": 17699\n        },\n        \"lastCallUsage\": {\n          \"input\": 17696,\n          \"output\": 3,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17699\n        },\n        \"promptTokens\": 17696\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775836909981,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \""
+        },
+        {
+          "turn": 9,
+          "ok": true,
+          "latency_s": 55.67120520900062,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "",
+          "stdout_excerpt": "{\n  \"runId\": \"f6082022-55ff-400a-a347-99ae40fbb1ca\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 50448,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17732,\n          \"output\": 3,\n          \"total\": 17735\n        },\n        \"lastCallUsage\": {\n          \"input\": 17732,\n          \"output\": 3,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17735\n        },\n        \"promptTokens\": 17732\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775836970438,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \""
+        },
+        {
+          "turn": 10,
+          "ok": true,
+          "latency_s": 58.2231863749912,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "",
+          "stdout_excerpt": "{\n  \"runId\": \"e580444f-0d97-4246-b4d9-32673e3ee973\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 54899,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17768,\n          \"output\": 6,\n          \"total\": 17774\n        },\n        \"lastCallUsage\": {\n          \"input\": 17768,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17774\n        },\n        \"promptTokens\": 17768\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837024112,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \""
         }
       ]
     },
     "shadow_first_pass": {
-      "ok": 1,
-      "failed": 3,
-      "timeouts": 3,
-      "timeout_rate": 0.75,
-      "p50": 130.93279687500035,
-      "p95": 130.93279687500035,
-      "mean": 130.93279687500035,
+      "ok": 10,
+      "failed": 0,
+      "timeouts": 0,
+      "timeout_rate": 0.0,
+      "p50": 3.920281500002602,
+      "p95": 4.029961683697911,
+      "mean": 3.9414410833007425,
+      "warmup_p50": 118.70758516599017,
       "turns": [
         {
           "turn": 1,
           "ok": true,
-          "latency_s": 130.93279687500035,
+          "latency_s": 3.986051542000496,
           "timeout": false,
           "rc": 0,
-          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\nGateway agent failed; falling back to embedded: Error: gateway closed (1006 abnormal closure (no close frame)): no close reason\nGateway target: ws://127.0.0.1:18789\nSource: local loopback\nConfig: /Users/louishyman/.openclaw/openclaw.json\nBind: loopback\n[compaction-safeguard] Compaction safeguard: no real conversation messages to summarize; writing compaction boundary to suppress re-trigger loop.\n{\n  \"payloads\": [\n    {\n      \"text\": \"OK\",\n      \"mediaUrl\": null\n    }\n  ],\n  \"meta\": {\n    \"durationMs\": 121812,\n    \"agentMeta\": {\n      \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n      \"provider\": \"ollama\",\n      \"model\": \"gemma4:26b\",\n      \"usage\": {\n        \"input\": 17259,\n        \"output\": 6,\n        \"total\": 17265\n      },\n      \"lastCallUsage\": {\n        \"input\": 17259,\n        \"output\": 6,\n        \"cacheRead\": 0,\n        \"cacheWrite\": 0,\n        \"total\": 17265\n      },\n      \"promptTokens\": 17259\n    },\n    \"aborted\": false,\n    \"systemPromptReport\": {\n      ",
-          "stdout_excerpt": ""
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"5e1e6495-d01c-4f3c-b82b-4dbd8a794e68\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1095,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17840,\n          \"output\": 6,\n          \"total\": 17846\n        },\n        \"lastCallUsage\": {\n          \"input\": 17840,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17846\n        },\n        \"promptTokens\": 17840\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837219767,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
         },
         {
           "turn": 2,
-          "ok": false,
-          "latency_s": 180.0082662920031,
-          "timeout": true,
-          "rc": 124,
+          "ok": true,
+          "latency_s": 3.907626040992909,
+          "timeout": false,
+          "rc": 0,
           "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
-          "stdout_excerpt": ""
+          "stdout_excerpt": "{\n  \"runId\": \"a4c06b73-ccc6-48d4-a6d4-f6a8cd9c552a\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1027,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17876,\n          \"output\": 3,\n          \"total\": 17879\n        },\n        \"lastCallUsage\": {\n          \"input\": 17876,\n          \"output\": 3,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17879\n        },\n        \"promptTokens\": 17876\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837223749,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
         },
         {
           "turn": 3,
-          "ok": false,
-          "latency_s": 180.0160397499858,
-          "timeout": true,
-          "rc": 124,
+          "ok": true,
+          "latency_s": 4.065157459001057,
+          "timeout": false,
+          "rc": 0,
           "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
-          "stdout_excerpt": ""
+          "stdout_excerpt": "{\n  \"runId\": \"4600b304-3aea-4f41-99b6-329fca824273\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1113,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17912,\n          \"output\": 6,\n          \"total\": 17918\n        },\n        \"lastCallUsage\": {\n          \"input\": 17912,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17918\n        },\n        \"promptTokens\": 17912\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837227716,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
         },
         {
           "turn": 4,
-          "ok": false,
-          "latency_s": 180.0098732500046,
-          "timeout": true,
-          "rc": 124,
+          "ok": true,
+          "latency_s": 3.8710603330109734,
+          "timeout": false,
+          "rc": 0,
           "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
-          "stdout_excerpt": ""
+          "stdout_excerpt": "{\n  \"runId\": \"a116e035-2869-4889-b660-426d3b3ba581\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1037,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17948,\n          \"output\": 3,\n          \"total\": 17951\n        },\n        \"lastCallUsage\": {\n          \"input\": 17948,\n          \"output\": 3,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17951\n        },\n        \"promptTokens\": 17948\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837231663,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+        },
+        {
+          "turn": 5,
+          "ok": true,
+          "latency_s": 3.9191518330044346,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"d7de1d5a-18d5-40de-8bdb-22b787e9a412\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1014,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17984,\n          \"output\": 2,\n          \"total\": 17986\n        },\n        \"lastCallUsage\": {\n          \"input\": 17984,\n          \"output\": 2,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17986\n        },\n        \"promptTokens\": 17984\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837235604,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+        },
+        {
+          "turn": 6,
+          "ok": true,
+          "latency_s": 3.900539458001731,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"3b5a2840-dc5f-4e0d-985a-6123e9a6b7db\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1029,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18020,\n          \"output\": 3,\n          \"total\": 18023\n        },\n        \"lastCallUsage\": {\n          \"input\": 18020,\n          \"output\": 3,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18023\n        },\n        \"promptTokens\": 18020\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837239491,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+        },
+        {
+          "turn": 7,
+          "ok": true,
+          "latency_s": 3.879869249998592,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"414a467b-30fa-4436-97ff-695aeffab4ee\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1023,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18056,\n          \"output\": 2,\n          \"total\": 18058\n        },\n        \"lastCallUsage\": {\n          \"input\": 18056,\n          \"output\": 2,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18058\n        },\n        \"promptTokens\": 18056\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837243389,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+        },
+        {
+          "turn": 8,
+          "ok": true,
+          "latency_s": 3.9214111670007696,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"01f2c7ee-3c1c-4f0e-8dc4-235dfd29406d\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1039,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18092,\n          \"output\": 2,\n          \"total\": 18094\n        },\n        \"lastCallUsage\": {\n          \"input\": 18092,\n          \"output\": 2,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18094\n        },\n        \"promptTokens\": 18092\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837247297,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+        },
+        {
+          "turn": 9,
+          "ok": true,
+          "latency_s": 3.9765991250023944,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"358974ba-22e9-41ec-bef4-b9cfba94cfcd\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1061,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18128,\n          \"output\": 3,\n          \"total\": 18131\n        },\n        \"lastCallUsage\": {\n          \"input\": 18128,\n          \"output\": 3,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18131\n        },\n        \"promptTokens\": 18128\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837251245,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+        },
+        {
+          "turn": 10,
+          "ok": true,
+          "latency_s": 3.9869446249940665,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"7742654e-6393-492d-b955-4625f27e1cfb\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1067,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18164,\n          \"output\": 3,\n          \"total\": 18167\n        },\n        \"lastCallUsage\": {\n          \"input\": 18164,\n          \"output\": 3,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18167\n        },\n        \"promptTokens\": 18164\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837255231,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
         }
       ]
     },
     "shadow_warm_rerun": {
-      "ok": 4,
-      "failed": 0,
-      "timeouts": 0,
-      "timeout_rate": 0.0,
-      "p50": 3.971591563007678,
-      "p95": 4.0258620251079265,
-      "mean": 3.974584500258061,
+      "ok": 9,
+      "failed": 1,
+      "timeouts": 1,
+      "timeout_rate": 0.1,
+      "p50": 4.352477334003197,
+      "p95": 113.8793994578009,
+      "mean": 25.19067742578045,
+      "warmup_p50": null,
       "turns": [
         {
           "turn": 1,
           "ok": true,
-          "latency_s": 4.029248375009047,
+          "latency_s": 4.352477334003197,
           "timeout": false,
           "rc": 0,
           "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
-          "stdout_excerpt": "{\n  \"runId\": \"c6ee521e-62d9-4c0e-8727-0a986e1f4fce\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1089,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17190,\n          \"output\": 6,\n          \"total\": 17196\n        },\n        \"lastCallUsage\": {\n          \"input\": 17190,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17196\n        },\n        \"promptTokens\": 17190\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775834012858,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+          "stdout_excerpt": "{\n  \"runId\": \"1584aa91-6633-46ab-bd96-4bf8af5bd27d\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1031,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18200,\n          \"output\": 2,\n          \"total\": 18202\n        },\n        \"lastCallUsage\": {\n          \"input\": 18200,\n          \"output\": 2,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18202\n        },\n        \"promptTokens\": 18200\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837268094,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
         },
         {
           "turn": 2,
           "ok": true,
-          "latency_s": 4.0066727090015775,
+          "latency_s": 177.71008854100364,
           "timeout": false,
           "rc": 0,
           "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
-          "stdout_excerpt": "{\n  \"runId\": \"a6e2ad92-fee2-4d2a-85ef-fe49cb158797\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1140,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17226,\n          \"output\": 6,\n          \"total\": 17232\n        },\n        \"lastCallUsage\": {\n          \"input\": 17226,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17232\n        },\n        \"promptTokens\": 17226\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775834016831,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+          "stdout_excerpt": "{\n  \"runId\": \"fb961d2a-d465-476f-94c0-750289d8285c\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 174203,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18236,\n          \"output\": 6,\n          \"total\": 18242\n        },\n        \"lastCallUsage\": {\n          \"input\": 18236,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18242\n        },\n        \"promptTokens\": 18236\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837272754,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          "
         },
         {
           "turn": 3,
-          "ok": true,
-          "latency_s": 3.925906500007841,
-          "timeout": false,
-          "rc": 0,
+          "ok": false,
+          "latency_s": 180.00706920798984,
+          "timeout": true,
+          "rc": 124,
           "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
-          "stdout_excerpt": "{\n  \"runId\": \"f51a4b9e-e975-4b74-bb3e-2f759b84c8fe\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\\nOK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1132,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17262,\n          \"output\": 8,\n          \"total\": 17270\n        },\n        \"lastCallUsage\": {\n          \"input\": 17262,\n          \"output\": 8,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17270\n        },\n        \"promptTokens\": 17262\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775834020747,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n        "
+          "stdout_excerpt": ""
         },
         {
           "turn": 4,
           "ok": true,
-          "latency_s": 3.9365104170137784,
+          "latency_s": 18.133365832996788,
           "timeout": false,
           "rc": 0,
           "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
-          "stdout_excerpt": "{\n  \"runId\": \"6315c269-c4c9-4958-ae56-e91b3b1cd9cc\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1087,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 17300,\n          \"output\": 6,\n          \"total\": 17306\n        },\n        \"lastCallUsage\": {\n          \"input\": 17300,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 17306\n        },\n        \"promptTokens\": 17300\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775834024735,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+          "stdout_excerpt": "{\n  \"runId\": \"cca1e50b-62f5-43b3-b820-7127ee31e212\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1127,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18308,\n          \"output\": 6,\n          \"total\": 18314\n        },\n        \"lastCallUsage\": {\n          \"input\": 18308,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18314\n        },\n        \"promptTokens\": 18308\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837643986,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+        },
+        {
+          "turn": 5,
+          "ok": true,
+          "latency_s": 4.620448790999944,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"7ac9447a-b1cf-40b1-98c5-3c41874b3d24\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\\nOK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1219,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18344,\n          \"output\": 8,\n          \"total\": 18352\n        },\n        \"lastCallUsage\": {\n          \"input\": 18344,\n          \"output\": 8,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18352\n        },\n        \"promptTokens\": 18344\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837648410,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n        "
+        },
+        {
+          "turn": 6,
+          "ok": true,
+          "latency_s": 4.219779375009239,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"c0aac68c-b9f2-4102-918b-55b5f024a9ea\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1139,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18382,\n          \"output\": 6,\n          \"total\": 18388\n        },\n        \"lastCallUsage\": {\n          \"input\": 18382,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18388\n        },\n        \"promptTokens\": 18382\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837652705,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+        },
+        {
+          "turn": 7,
+          "ok": true,
+          "latency_s": 5.5602315419964725,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"54a251a1-b974-4f86-bc76-7fa2ce33cb01\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"Ollama API stream ended without a final response\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 2616,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"lastCallUsage\": {\n          \"input\": 0,\n          \"output\": 0,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 0\n        }\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837656801,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"truncatedFiles\": 0,\n          \"nearLimitFiles\": 0,\n          \"totalNearLimit\": false\n        },\n  "
+        },
+        {
+          "turn": 8,
+          "ok": true,
+          "latency_s": 4.013016124998103,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"06d0b794-09b1-4491-bb8a-1f29346e837b\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1091,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18453,\n          \"output\": 6,\n          \"total\": 18459\n        },\n        \"lastCallUsage\": {\n          \"input\": 18453,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18459\n        },\n        \"promptTokens\": 18453\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837662305,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+        },
+        {
+          "turn": 9,
+          "ok": true,
+          "latency_s": 4.046438250006759,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"4b65c466-433b-4432-bcfe-85a16d5edac5\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1120,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18489,\n          \"output\": 6,\n          \"total\": 18495\n        },\n        \"lastCallUsage\": {\n          \"input\": 18489,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18495\n        },\n        \"promptTokens\": 18489\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837666334,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
+        },
+        {
+          "turn": 10,
+          "ok": true,
+          "latency_s": 4.060251041009906,
+          "timeout": false,
+          "rc": 0,
+          "stderr_excerpt": "Config warnings:\\n- plugins.entries.ollama: plugin ollama: duplicate plugin id detected; bundled plugin will be overridden by config plugin (/opt/homebrew/lib/node_modules/openclaw/dist/extensions/ollama/index.js)\n",
+          "stdout_excerpt": "{\n  \"runId\": \"5c994ec0-5ba2-44e6-8521-1d14a3388614\",\n  \"status\": \"ok\",\n  \"summary\": \"completed\",\n  \"result\": {\n    \"payloads\": [\n      {\n        \"text\": \"OK\",\n        \"mediaUrl\": null\n      }\n    ],\n    \"meta\": {\n      \"durationMs\": 1135,\n      \"agentMeta\": {\n        \"sessionId\": \"298b383d-0330-4f10-b385-bb917539bcfc\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"usage\": {\n          \"input\": 18525,\n          \"output\": 6,\n          \"total\": 18531\n        },\n        \"lastCallUsage\": {\n          \"input\": 18525,\n          \"output\": 6,\n          \"cacheRead\": 0,\n          \"cacheWrite\": 0,\n          \"total\": 18531\n        },\n        \"promptTokens\": 18525\n      },\n      \"aborted\": false,\n      \"systemPromptReport\": {\n        \"source\": \"run\",\n        \"generatedAt\": 1775837670381,\n        \"sessionId\": \"kv-ab-shadow\",\n        \"sessionKey\": \"agent:main:main\",\n        \"provider\": \"ollama\",\n        \"model\": \"gemma4:26b\",\n        \"workspaceDir\": \"/Users/louishyman/.openclaw/workspace\",\n        \"bootstrapMaxChars\": 20000,\n        \"bootstrapTotalMaxChars\": 150000,\n        \"bootstrapTruncation\": {\n          \"warningMode\": \"once\",\n          \"warningShown\": false,\n          \"t"
         }
       ]
+    }
+  },
+  "derived": {
+    "p50_speedup_vs_baseline": {
+      "shadow_first_pass": 14.526302713710255,
+      "shadow_warm_rerun": 13.083858093206576
+    },
+    "p95_speedup_vs_baseline": {
+      "shadow_first_pass": 19.261672312594285,
+      "shadow_warm_rerun": 0.6816316362158561
     }
   }
 }

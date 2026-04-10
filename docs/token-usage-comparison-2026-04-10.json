@@ -1,27 +1,27 @@
 {
-  "generated_at_utc": "2026-04-10T15:47:42.896231+00:00",
+  "generated_at_utc": "2026-04-10T16:16:29.762073+00:00",
   "sources": {
-    "bundled_baseline": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab-bundled.json",
-    "shadow_first_pass": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab-shadow.json",
-    "shadow_warm_rerun": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab-shadow-rerun.json"
+    "bundled_baseline": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab10-bundled.json",
+    "shadow_first_pass": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab10-shadow.json",
+    "shadow_warm_rerun": "/Users/louishyman/openclaw/runtime_metrics/ollama-kv-ab10-shadow-rerun.json"
   },
   "results": {
     "bundled_baseline": {
-      "ok": 4,
+      "ok": 10,
       "failed": 0,
       "timeouts": 0,
       "timeout_rate": 0.0,
-      "turns_with_usage": 4,
+      "turns_with_usage": 10,
       "turns": [
         {
           "turn": 1,
           "ok": true,
           "timeout": false,
-          "latency_s": 46.91585775000567,
+          "latency_s": 36.645394499995746,
           "usage": {
-            "input": 16851,
+            "input": 17444,
             "output": 6,
-            "total": 16857,
+            "total": 17450,
             "cacheRead": 0,
             "cacheWrite": 0
           }
@@ -30,11 +30,11 @@
           "turn": 2,
           "ok": true,
           "timeout": false,
-          "latency_s": 57.48341204099415,
+          "latency_s": 42.50960608299647,
           "usage": {
-            "input": 16887,
-            "output": 6,
-            "total": 16893,
+            "input": 17480,
+            "output": 3,
+            "total": 17483,
             "cacheRead": 0,
             "cacheWrite": 0
           }
@@ -43,11 +43,11 @@
           "turn": 3,
           "ok": true,
           "timeout": false,
-          "latency_s": 58.22463645800599,
+          "latency_s": 51.79145658299967,
           "usage": {
-            "input": 16923,
-            "output": 6,
-            "total": 16929,
+            "input": 17516,
+            "output": 2,
+            "total": 17518,
             "cacheRead": 0,
             "cacheWrite": 0
           }
@@ -56,116 +56,131 @@
           "turn": 4,
           "ok": true,
           "timeout": false,
-          "latency_s": 3.905346166007803,
+          "latency_s": 84.97347108399845,
           "usage": {
-            "input": 16959,
+            "input": 17552,
             "output": 6,
-            "total": 16965,
+            "total": 17558,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 5,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 62.29155179199006,
+          "usage": {
+            "input": 17588,
+            "output": 3,
+            "total": 17591,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 6,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 68.64087175000168,
+          "usage": {
+            "input": 17624,
+            "output": 6,
+            "total": 17630,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 7,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 54.635269541002344,
+          "usage": {
+            "input": 17660,
+            "output": 6,
+            "total": 17666,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 8,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 58.74867674999405,
+          "usage": {
+            "input": 17696,
+            "output": 3,
+            "total": 17699,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 9,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 55.67120520900062,
+          "usage": {
+            "input": 17732,
+            "output": 3,
+            "total": 17735,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 10,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 58.2231863749912,
+          "usage": {
+            "input": 17768,
+            "output": 6,
+            "total": 17774,
             "cacheRead": 0,
             "cacheWrite": 0
           }
         }
       ],
       "token_metrics": {
-        "count": 4,
+        "count": 10,
         "sum": {
-          "input": 67620,
-          "output": 24,
-          "total": 67644,
+          "input": 176060,
+          "output": 44,
+          "total": 176104,
           "cacheRead": 0,
           "cacheWrite": 0
         },
         "avg_per_ok_turn": {
-          "input": 16905.0,
-          "output": 6.0,
-          "total": 16911.0
+          "input": 17606.0,
+          "output": 4.4,
+          "total": 17610.4
         },
-        "p50_total_per_ok_turn": 16911.0,
-        "p95_total_per_ok_turn": 16959.6,
-        "mean_tokens_per_second": 1321.9943115610251,
-        "p50_tokens_per_second": 326.58945185973005,
-        "p95_tokens_per_second": 3746.3337849588656
+        "p50_total_per_ok_turn": 17610.5,
+        "p95_total_per_ok_turn": 17756.45,
+        "mean_tokens_per_second": 322.002032823922,
+        "p50_tokens_per_second": 311.920206027635,
+        "p95_tokens_per_second": 446.97422900614714
       }
     },
     "shadow_first_pass": {
-      "ok": 1,
-      "failed": 3,
-      "timeouts": 3,
-      "timeout_rate": 0.75,
-      "turns_with_usage": 1,
-      "turns": [
-        {
-          "turn": 1,
-          "ok": true,
-          "timeout": false,
-          "latency_s": 130.93279687500035,
-          "usage": {
-            "input": 17259,
-            "output": 6,
-            "total": 17265,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          }
-        },
-        {
-          "turn": 2,
-          "ok": false,
-          "timeout": true,
-          "latency_s": 180.0082662920031,
-          "usage": null
-        },
-        {
-          "turn": 3,
-          "ok": false,
-          "timeout": true,
-          "latency_s": 180.0160397499858,
-          "usage": null
-        },
-        {
-          "turn": 4,
-          "ok": false,
-          "timeout": true,
-          "latency_s": 180.0098732500046,
-          "usage": null
-        }
-      ],
-      "token_metrics": {
-        "count": 1,
-        "sum": {
-          "input": 17259,
-          "output": 6,
-          "total": 17265,
-          "cacheRead": 0,
-          "cacheWrite": 0
-        },
-        "avg_per_ok_turn": {
-          "input": 17259.0,
-          "output": 6.0,
-          "total": 17265.0
-        },
-        "p50_total_per_ok_turn": 17265.0,
-        "p95_total_per_ok_turn": 17265.0,
-        "mean_tokens_per_second": 131.861538224702,
-        "p50_tokens_per_second": 131.861538224702,
-        "p95_tokens_per_second": 131.861538224702
-      }
-    },
-    "shadow_warm_rerun": {
-      "ok": 4,
+      "ok": 10,
       "failed": 0,
       "timeouts": 0,
       "timeout_rate": 0.0,
-      "turns_with_usage": 4,
+      "turns_with_usage": 10,
       "turns": [
         {
           "turn": 1,
           "ok": true,
           "timeout": false,
-          "latency_s": 4.029248375009047,
+          "latency_s": 3.986051542000496,
           "usage": {
-            "input": 17190,
+            "input": 17840,
             "output": 6,
-            "total": 17196,
+            "total": 17846,
             "cacheRead": 0,
             "cacheWrite": 0
           }
@@ -174,11 +189,11 @@
           "turn": 2,
           "ok": true,
           "timeout": false,
-          "latency_s": 4.0066727090015775,
+          "latency_s": 3.907626040992909,
           "usage": {
-            "input": 17226,
-            "output": 6,
-            "total": 17232,
+            "input": 17876,
+            "output": 3,
+            "total": 17879,
             "cacheRead": 0,
             "cacheWrite": 0
           }
@@ -187,11 +202,11 @@
           "turn": 3,
           "ok": true,
           "timeout": false,
-          "latency_s": 3.925906500007841,
+          "latency_s": 4.065157459001057,
           "usage": {
-            "input": 17262,
-            "output": 8,
-            "total": 17270,
+            "input": 17912,
+            "output": 6,
+            "total": 17918,
             "cacheRead": 0,
             "cacheWrite": 0
           }
@@ -200,36 +215,271 @@
           "turn": 4,
           "ok": true,
           "timeout": false,
-          "latency_s": 3.9365104170137784,
+          "latency_s": 3.8710603330109734,
           "usage": {
-            "input": 17300,
-            "output": 6,
-            "total": 17306,
+            "input": 17948,
+            "output": 3,
+            "total": 17951,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 5,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 3.9191518330044346,
+          "usage": {
+            "input": 17984,
+            "output": 2,
+            "total": 17986,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 6,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 3.900539458001731,
+          "usage": {
+            "input": 18020,
+            "output": 3,
+            "total": 18023,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 7,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 3.879869249998592,
+          "usage": {
+            "input": 18056,
+            "output": 2,
+            "total": 18058,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 8,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 3.9214111670007696,
+          "usage": {
+            "input": 18092,
+            "output": 2,
+            "total": 18094,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 9,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 3.9765991250023944,
+          "usage": {
+            "input": 18128,
+            "output": 3,
+            "total": 18131,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 10,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 3.9869446249940665,
+          "usage": {
+            "input": 18164,
+            "output": 3,
+            "total": 18167,
             "cacheRead": 0,
             "cacheWrite": 0
           }
         }
       ],
       "token_metrics": {
-        "count": 4,
+        "count": 10,
         "sum": {
-          "input": 68978,
-          "output": 26,
-          "total": 69004,
+          "input": 180020,
+          "output": 33,
+          "total": 180053,
           "cacheRead": 0,
           "cacheWrite": 0
         },
         "avg_per_ok_turn": {
-          "input": 17244.5,
-          "output": 6.5,
-          "total": 17251.0
+          "input": 18002.0,
+          "output": 3.3,
+          "total": 18005.3
         },
-        "p50_total_per_ok_turn": 17251.0,
-        "p95_total_per_ok_turn": 17300.6,
-        "mean_tokens_per_second": 4340.97061833066,
-        "p50_tokens_per_second": 4348.552474325939,
-        "p95_tokens_per_second": 4398.578349367697
+        "p50_total_per_ok_turn": 18004.5,
+        "p95_total_per_ok_turn": 18150.8,
+        "mean_tokens_per_second": 4569.183927369109,
+        "p50_tokens_per_second": 4582.335257761568,
+        "p95_tokens_per_second": 4646.608140550886
       }
+    },
+    "shadow_warm_rerun": {
+      "ok": 9,
+      "failed": 1,
+      "timeouts": 1,
+      "timeout_rate": 0.1,
+      "turns_with_usage": 8,
+      "turns": [
+        {
+          "turn": 1,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 4.352477334003197,
+          "usage": {
+            "input": 18200,
+            "output": 2,
+            "total": 18202,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 2,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 177.71008854100364,
+          "usage": {
+            "input": 18236,
+            "output": 6,
+            "total": 18242,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 3,
+          "ok": false,
+          "timeout": true,
+          "latency_s": 180.00706920798984,
+          "usage": null
+        },
+        {
+          "turn": 4,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 18.133365832996788,
+          "usage": {
+            "input": 18308,
+            "output": 6,
+            "total": 18314,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 5,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 4.620448790999944,
+          "usage": {
+            "input": 18344,
+            "output": 8,
+            "total": 18352,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 6,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 4.219779375009239,
+          "usage": {
+            "input": 18382,
+            "output": 6,
+            "total": 18388,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 7,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 5.5602315419964725,
+          "usage": null
+        },
+        {
+          "turn": 8,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 4.013016124998103,
+          "usage": {
+            "input": 18453,
+            "output": 6,
+            "total": 18459,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 9,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 4.046438250006759,
+          "usage": {
+            "input": 18489,
+            "output": 6,
+            "total": 18495,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "turn": 10,
+          "ok": true,
+          "timeout": false,
+          "latency_s": 4.060251041009906,
+          "usage": {
+            "input": 18525,
+            "output": 6,
+            "total": 18531,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        }
+      ],
+      "token_metrics": {
+        "count": 8,
+        "sum": {
+          "input": 146937,
+          "output": 46,
+          "total": 146983,
+          "cacheRead": 0,
+          "cacheWrite": 0
+        },
+        "avg_per_ok_turn": {
+          "input": 18367.125,
+          "output": 5.75,
+          "total": 18372.875
+        },
+        "p50_total_per_ok_turn": 18370.0,
+        "p95_total_per_ok_turn": 18518.4,
+        "mean_tokens_per_second": 3419.8190322653672,
+        "p50_tokens_per_second": 4269.779977668876,
+        "p95_tokens_per_second": 4589.598623287112
+      }
+    }
+  },
+  "derived": {
+    "mean_tps_speedup_vs_baseline": {
+      "shadow_first_pass": 14.189922614145864,
+      "shadow_warm_rerun": 10.620488952426589
+    },
+    "p50_tps_speedup_vs_baseline": {
+      "shadow_first_pass": 14.690729132679495,
+      "shadow_warm_rerun": 13.688693118170706
     }
   },
   "notes": [

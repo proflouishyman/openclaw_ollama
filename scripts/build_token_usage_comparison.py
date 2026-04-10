@@ -124,12 +124,42 @@ def main() -> None:
     out_json = repo_root / "docs/token-usage-comparison-2026-04-10.json"
 
     files = {
-        "bundled_baseline": source_root / "ollama-kv-ab-bundled.json",
-        "shadow_first_pass": source_root / "ollama-kv-ab-shadow.json",
-        "shadow_warm_rerun": source_root / "ollama-kv-ab-shadow-rerun.json",
+        "bundled_baseline": source_root / "ollama-kv-ab10-bundled.json",
+        "shadow_first_pass": source_root / "ollama-kv-ab10-shadow.json",
+        "shadow_warm_rerun": source_root / "ollama-kv-ab10-shadow-rerun.json",
     }
 
     results = {name: summarize(load(path)) for name, path in files.items()}
+    baseline = results["bundled_baseline"]["token_metrics"]
+    shadow = results["shadow_first_pass"]["token_metrics"]
+    rerun = results["shadow_warm_rerun"]["token_metrics"]
+
+    derived = {
+        "mean_tps_speedup_vs_baseline": {
+            "shadow_first_pass": (
+                shadow["mean_tokens_per_second"] / baseline["mean_tokens_per_second"]
+                if shadow["mean_tokens_per_second"] and baseline["mean_tokens_per_second"]
+                else None
+            ),
+            "shadow_warm_rerun": (
+                rerun["mean_tokens_per_second"] / baseline["mean_tokens_per_second"]
+                if rerun["mean_tokens_per_second"] and baseline["mean_tokens_per_second"]
+                else None
+            ),
+        },
+        "p50_tps_speedup_vs_baseline": {
+            "shadow_first_pass": (
+                shadow["p50_tokens_per_second"] / baseline["p50_tokens_per_second"]
+                if shadow["p50_tokens_per_second"] and baseline["p50_tokens_per_second"]
+                else None
+            ),
+            "shadow_warm_rerun": (
+                rerun["p50_tokens_per_second"] / baseline["p50_tokens_per_second"]
+                if rerun["p50_tokens_per_second"] and baseline["p50_tokens_per_second"]
+                else None
+            ),
+        },
+    }
 
     out_json.write_text(
         json.dumps(
@@ -137,6 +167,7 @@ def main() -> None:
                 "generated_at_utc": datetime.now(timezone.utc).isoformat(),
                 "sources": {k: str(v) for k, v in files.items()},
                 "results": results,
+                "derived": derived,
                 "notes": [
                     "Token values are parsed from OpenClaw benchmark stdout/stderr excerpts.",
                     "Timeout turns generally do not include usage payloads and are excluded from per-ok-turn aggregates.",
@@ -148,7 +179,9 @@ def main() -> None:
 
     rows = ["bundled_baseline", "shadow_first_pass", "shadow_warm_rerun"]
     md = []
-    md.append("# Ollama KV Cache Token Usage Comparison (2026-04-10)")
+    md.append("# Ollama KV Cache Token Usage Comparison (2026-04-10, 10 Turns)")
+    md.append("")
+    md.append("Token counts are derived from the same 10-turn latency experiment artifacts.")
     md.append("")
     md.append("## Summary Table")
     md.append("")
@@ -180,6 +213,21 @@ def main() -> None:
             + f"{fmt_float(t['p50_tokens_per_second'])} | {fmt_float(t['p95_tokens_per_second'])} |"
         )
 
+    md.append("")
+    md.append("## Throughput Speedup vs Bundled Baseline")
+    md.append("")
+    md.append("| Scenario | Mean Tokens/s Speedup | p50 Tokens/s Speedup |")
+    md.append("| --- | --- | --- |")
+    md.append(
+        "| shadow_first_pass | "
+        + f"{fmt_float(derived['mean_tps_speedup_vs_baseline']['shadow_first_pass'])}x | "
+        + f"{fmt_float(derived['p50_tps_speedup_vs_baseline']['shadow_first_pass'])}x |"
+    )
+    md.append(
+        "| shadow_warm_rerun | "
+        + f"{fmt_float(derived['mean_tps_speedup_vs_baseline']['shadow_warm_rerun'])}x | "
+        + f"{fmt_float(derived['p50_tps_speedup_vs_baseline']['shadow_warm_rerun'])}x |"
+    )
     md.append("")
     md.append("## Per-turn Parsed Usage")
     md.append("")
