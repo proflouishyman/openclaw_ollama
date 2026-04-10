@@ -123,6 +123,22 @@ Details and shareable artifacts:
 - `docs/TOKEN_USAGE_COMPARISON_2026-04-10.md`
 - `docs/token-usage-comparison-2026-04-10.json`
 
+## Token usage comparison (2026-04-10)
+
+From the same A/B benchmark runs:
+
+| Scenario | OK/Total | Input Sum | Output Sum | Total Sum | Avg Total/OK Turn | Mean Tokens/s |
+| --- | --- | --- | --- | --- | --- | --- |
+| Bundled OpenClaw Ollama provider | 4/4 | 67620 | 24 | 67644 | 16911.00 | 1321.99 |
+| Shadow provider (first pass) | 1/4 | 17259 | 6 | 17265 | 17265.00 | 131.86 |
+| Shadow provider (warm rerun) | 4/4 | 68978 | 26 | 69004 | 17251.00 | 4340.97 |
+
+Takeaways:
+
+- Token volume per successful turn is similar between bundled and shadow warm runs.
+- Latency gains are driven by execution speed, not fewer prompt tokens.
+- In these artifacts, `cacheRead/cacheWrite` remained `0`.
+
 Regenerate reports:
 
 ```bash
