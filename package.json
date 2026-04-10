@@ -1,0 +1,21 @@
+{
+  "name": "openclaw-ollama-kv-cache-plugin",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Shadow Ollama provider plugin for OpenClaw with keep_alive and options injection",
+  "license": "MIT",
+  "openclaw": {
+    "extensions": [
+      "./index.js"
+    ],
+    "providers": [
+      "ollama"
+    ]
+  },
+  "scripts": {
+    "test": "node --test test/cache-controls.test.mjs",
+    "generate-shim": "python3 scripts/generate_bundled_shim.py",
+    "apply-config": "python3 scripts/apply_openclaw_config.py"
+  }
+}
