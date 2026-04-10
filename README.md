@@ -93,6 +93,34 @@ Details: [docs/ROLLBACK.md](docs/ROLLBACK.md)
 node --test test/cache-controls.test.mjs
 ```
 
+## Measured results (2026-04-10)
+
+Test setup: fixed SOUL-heavy prompt, `ollama/gemma4:26b`, same agent/session,
+4 turns per scenario.
+
+| Scenario | OK/Total | Timeout Rate | p50 (s) | p95 (s) |
+| --- | --- | --- | --- | --- |
+| Bundled OpenClaw Ollama provider | 4/4 | 0% | 52.20 | 58.11 |
+| Shadow provider (first pass) | 1/4 | 75% | 130.93 | 130.93 |
+| Shadow provider (warm rerun) | 4/4 | 0% | 3.97 | 4.03 |
+
+Warm rerun speedup vs bundled baseline:
+
+- p50: 13.14x faster
+- p95: 14.44x faster
+- timeout rate: 0% vs 0% (no regression)
+
+Interpretation:
+
+- Warm-path speedups can be large when static-prefix reuse is effective.
+- First-pass behavior may still be noisy depending on host load/model state.
+- Run multiple local passes before drawing conclusions.
+
+Details and shareable artifacts:
+
+- `docs/METRICS_COMPARISON_2026-04-10.md`
+- `docs/metrics-comparison-2026-04-10.json`
+
 ## Upgrade notes
 
 After OpenClaw updates, rerun:
