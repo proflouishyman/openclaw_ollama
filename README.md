@@ -130,3 +130,4 @@ python3 scripts/generate_bundled_shim.py
 ```
 
 That refreshes the absolute bundled import target used by the plugin.
+# openclaw_ollama
