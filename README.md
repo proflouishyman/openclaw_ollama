@@ -54,6 +54,12 @@ python3 scripts/setup_launchagent.py
 openclaw gateway restart
 ```
 
+5. Optional but recommended: harden ingestion cron job timeouts/profiles:
+
+```bash
+scripts/harden_cron_timeouts.sh
+```
+
 ## Config contract
 
 Example in `~/.openclaw/openclaw.json`:
@@ -69,6 +75,11 @@ Example in `~/.openclaw/openclaw.json`:
               "keepAlive": "45m",
               "options": {
                 "num_batch": 16
+              },
+              "reliability": {
+                "requestTimeoutMs": 90000,
+                "maxRetries": 1,
+                "retryBackoffMs": 250
               }
             }
           }
@@ -79,6 +90,12 @@ Example in `~/.openclaw/openclaw.json`:
 }
 ```
 
+Reliability controls (optional):
+
+- `params.ollama.reliability.requestTimeoutMs`: hard per-attempt request timeout (ms)
+- `params.ollama.reliability.maxRetries`: retry count for transient stream failures before any output
+- `params.ollama.reliability.retryBackoffMs`: delay between retry attempts
+
 ## Rollback
 
 1. Remove this plugin path from `plugins.load.paths`.
@@ -86,6 +103,21 @@ Example in `~/.openclaw/openclaw.json`:
 3. If launchd startup hook was installed, restore your LaunchAgent backup.
 
 Details: [docs/ROLLBACK.md](docs/ROLLBACK.md)
+
+## Runtime Self-Healing
+
+The launchd startup wrapper now runs:
+
+- `scripts/reconcile_runtime_state.py` before `openclaw gateway run`
+
+This preflight:
+
+- marks stale `running` CLI/subagent task rows as `lost` during safe startup
+  windows (older than grace threshold)
+- removes orphaned session lock files whose lockfile PIDs no longer exist
+
+This prevents old interrupted tasks from being restored as active session locks
+after gateway restart.
 
 ## Tests
 

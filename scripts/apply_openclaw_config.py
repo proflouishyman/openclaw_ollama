@@ -30,6 +30,24 @@ def parse_args() -> argparse.Namespace:
         default=16,
         help="params.ollama.options.num_batch value",
     )
+    parser.add_argument(
+        "--request-timeout-ms",
+        type=int,
+        default=90000,
+        help="params.ollama.reliability.requestTimeoutMs value",
+    )
+    parser.add_argument(
+        "--max-retries",
+        type=int,
+        default=1,
+        help="params.ollama.reliability.maxRetries value",
+    )
+    parser.add_argument(
+        "--retry-backoff-ms",
+        type=int,
+        default=250,
+        help="params.ollama.reliability.retryBackoffMs value",
+    )
     return parser.parse_args()
 
 
@@ -65,6 +83,20 @@ def main() -> None:
         options["num_batch"] = args.num_batch
         changed = True
     ollama["options"] = options
+
+    reliability = ollama.get("reliability")
+    if not isinstance(reliability, dict):
+        reliability = {}
+    if reliability.get("requestTimeoutMs") != args.request_timeout_ms:
+        reliability["requestTimeoutMs"] = args.request_timeout_ms
+        changed = True
+    if reliability.get("maxRetries") != args.max_retries:
+        reliability["maxRetries"] = args.max_retries
+        changed = True
+    if reliability.get("retryBackoffMs") != args.retry_backoff_ms:
+        reliability["retryBackoffMs"] = args.retry_backoff_ms
+        changed = True
+    ollama["reliability"] = reliability
 
     if changed:
         config_path.write_text(json.dumps(cfg, indent=2) + "\n")

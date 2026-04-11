@@ -10,12 +10,22 @@ PLUGIN_PATH="${OPENCLAW_OLLAMA_PLUGIN_PATH:-${REPO_ROOT}}"
 MODEL_KEY="${OPENCLAW_OLLAMA_MODEL_KEY:-ollama/gemma4:26b}"
 KEEP_ALIVE="${OPENCLAW_OLLAMA_KEEPALIVE:-45m}"
 NUM_BATCH="${OPENCLAW_OLLAMA_NUM_BATCH:-16}"
+REQUEST_TIMEOUT_MS="${OPENCLAW_OLLAMA_REQUEST_TIMEOUT_MS:-90000}"
+MAX_RETRIES="${OPENCLAW_OLLAMA_MAX_RETRIES:-1}"
+RETRY_BACKOFF_MS="${OPENCLAW_OLLAMA_RETRY_BACKOFF_MS:-250}"
+
+# Reconcile stale runtime state before gateway boot to avoid lock resurrection.
+python3 "${SCRIPT_DIR}/reconcile_runtime_state.py" \
+  --grace-seconds 0 >/dev/null || true
 
 python3 "${SCRIPT_DIR}/apply_openclaw_config.py" \
   --plugin-path "${PLUGIN_PATH}" \
   --model-key "${MODEL_KEY}" \
   --keep-alive "${KEEP_ALIVE}" \
-  --num-batch "${NUM_BATCH}" >/dev/null || true
+  --num-batch "${NUM_BATCH}" \
+  --request-timeout-ms "${REQUEST_TIMEOUT_MS}" \
+  --max-retries "${MAX_RETRIES}" \
+  --retry-backoff-ms "${RETRY_BACKOFF_MS}" >/dev/null || true
 
 if inspect_json="$(openclaw plugins inspect ollama --json 2>/dev/null)"; then
   source_path="$(python3 - "${inspect_json}" <<'PY'

@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   injectOllamaCacheControls,
   mergeOllamaOptions,
+  resolveOllamaReliabilityControls,
   resolveOllamaCacheControls,
   wrapStreamFnWithOllamaCacheControls,
 } from "../lib/cache-controls.js";
@@ -48,4 +49,109 @@ test("mergeOllamaOptions keeps core-managed keys authoritative", () => {
 test("no params returns stream function unchanged", () => {
   const base = () => "ok";
   assert.strictEqual(wrapStreamFnWithOllamaCacheControls(base, undefined), base);
+});
+
+function createCollectorStream() {
+  const events = [];
+  let ended = false;
+  let resolveEnded;
+  const endedPromise = new Promise((resolve) => {
+    resolveEnded = resolve;
+  });
+  return {
+    push(event) {
+      events.push(event);
+    },
+    end() {
+      ended = true;
+      resolveEnded();
+    },
+    get events() {
+      return events;
+    },
+    get ended() {
+      return ended;
+    },
+    endedPromise,
+  };
+}
+
+async function* streamFromEvents(events) {
+  for (const event of events) yield event;
+}
+
+test("resolveOllamaReliabilityControls reads reliability config", () => {
+  const controls = resolveOllamaReliabilityControls({
+    ollama: {
+      reliability: {
+        requestTimeoutMs: 90000,
+        maxRetries: 2,
+        retryBackoffMs: 150,
+      },
+    },
+  });
+  assert.deepEqual(controls, {
+    requestTimeoutMs: 90000,
+    maxRetries: 2,
+    retryBackoffMs: 150,
+  });
+});
+
+test("retries transient early stream errors and suppresses failed attempt events", async () => {
+  let calls = 0;
+  const base = () => {
+    calls += 1;
+    if (calls === 1) {
+      return streamFromEvents([
+        { type: "error", error: { errorMessage: "Ollama API stream ended without a final response" } },
+      ]);
+    }
+    return streamFromEvents([
+      { type: "start" },
+      { type: "text_start" },
+      { type: "text_delta", delta: "OK" },
+      { type: "done" },
+    ]);
+  };
+
+  const wrapped = wrapStreamFnWithOllamaCacheControls(
+    base,
+    { ollama: { reliability: { maxRetries: 1, retryBackoffMs: 0 } } },
+    createCollectorStream,
+  );
+  const out = wrapped({}, {}, {});
+  await out.endedPromise;
+
+  assert.equal(calls, 2);
+  assert.deepEqual(
+    out.events.map((event) => event.type),
+    ["start", "text_start", "text_delta", "done"],
+  );
+});
+
+test("does not retry once stream has emitted material output", async () => {
+  let calls = 0;
+  const base = () => {
+    calls += 1;
+    return streamFromEvents([
+      { type: "start" },
+      { type: "text_start" },
+      { type: "text_delta", delta: "partial" },
+      { type: "error", error: { errorMessage: "Ollama API stream ended without a final response" } },
+    ]);
+  };
+
+  const wrapped = wrapStreamFnWithOllamaCacheControls(
+    base,
+    { ollama: { reliability: { maxRetries: 2, retryBackoffMs: 0 } } },
+    createCollectorStream,
+  );
+  const out = wrapped({}, {}, {});
+  await out.endedPromise;
+
+  assert.equal(calls, 1);
+  assert.deepEqual(
+    out.events.map((event) => event.type),
+    ["start", "text_start", "text_delta", "error"],
+  );
 });
